@@ -1,91 +1,97 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="scroll-smooth">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nitya | Soluções Tecnológicas</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Animação da Engrenagem - Agora centralizada */
+        /* Rotação da Engrenagem */
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        #engrenagem {
-            animation: rotate 10s linear infinite;
+        #engrenagem-nativa {
+            animation: rotate 12s linear infinite;
             transform-origin: center;
             transform-box: fill-box;
         }
 
-        /* Animação das Linhas de Circuito */
+        /* Efeito de "Energia" nos Circuitos */
         @keyframes dash {
-            to { stroke-dashoffset: 0; }
+            0% { stroke-dashoffset: 1000; opacity: 0; }
+            50% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0; }
         }
-        .linha-circuito {
-            stroke-dasharray: 1000;
-            stroke-dashoffset: 1000;
-            animation: dash 5s linear infinite;
+        .circuito-tech {
+            stroke-dasharray: 200;
+            animation: dash 4s linear infinite;
+        }
+
+        .glow-orange {
+            filter: drop-shadow(0 0 8px rgba(255, 196, 43, 0.5));
         }
     </style>
 </head>
-<body class="bg-[#0b1120] text-gray-100 font-sans">
+<body class="bg-[#0b1120] text-gray-100 font-sans selection:bg-[#ffc42b] selection:text-black">
 
-    <!-- Header -->
     <header class="fixed w-full z-50 bg-[#0b1120]/90 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-xl font-black tracking-tighter uppercase">
                 NITYA<span class="text-[#ffc42b]">TECH</span>
             </div>
-            <a href="https://wa.me/55DDDSEUNUMERO" class="bg-[#ffc42b] text-[#0b1120] px-6 py-2 rounded font-bold text-sm hover:bg-yellow-500 transition">CONTATO</a>
+            <a href="https://wa.me/5587991422587" class="bg-[#ffc42b] text-[#0b1120] px-6 py-2 rounded font-bold text-sm hover:scale-105 transition">WHATSAPP</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="min-h-screen flex items-center pt-20 px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             
-            <!-- Texto -->
-            <div class="order-2 md:order-1">
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                    Sua ideia em <br><span class="text-[#ffc42b]">código de alta performance.</span>
+            <div class="space-y-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-[1.1]">
+                    Sua ideia em <br><span class="text-[#ffc42b] drop-shadow-sm">código de elite.</span>
                 </h1>
-                <p class="text-gray-400 text-xl mb-10 max-w-lg">
-                    Desenvolvimento de Landing Pages, automação e infraestrutura técnica para escalar seu negócio.
+                <p class="text-gray-400 text-xl max-w-lg leading-relaxed">
+                    Desenvolvimento de Landing Pages, automação inteligente e infraestrutura para quem busca performance real.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="#orcamento" class="bg-[#ffc42b] text-[#0b1120] px-8 py-4 rounded-full font-bold text-lg hover:scale-105 transition shadow-[0_0_20px_rgba(255,196,43,0.3)]">
-                        SOLICITAR ORÇAMENTO
+                <div class="pt-4">
+                    <a href="https://wa.me/5587991422587" class="bg-[#ffc42b] text-[#0b1120] px-10 py-5 rounded-full font-black text-xl hover:shadow-[0_0_30px_rgba(255,196,43,0.4)] transition-all inline-block">
+                        SOLICITAR PROJETO
                     </a>
                 </div>
             </div>
 
-            <!-- Logo Animado (Ajustado) -->
-            <div class="order-1 md:order-2 flex justify-center items-center">
-                <div class="relative w-full max-w-lg aspect-square flex items-center justify-center">
-                    <!-- Brilho de fundo -->
-                    <div class="absolute w-64 h-64 bg-[#ffc42b]/10 rounded-full blur-[100px]"></div>
+            <!-- O LOGO CORRIGIDO -->
+            <div class="flex justify-center items-center">
+                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-lg h-auto glow-orange">
+                    <!-- Fundo sutil -->
+                    <circle cx="250" cy="250" r="150" fill="#1e293b" fill-opacity="0.3" />
                     
-                    <svg viewBox="150 150 600 450" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-2xl">
-                        <!-- Laptop Body -->
-                        <g transform="translate(0, 50)">
-                            <path fill="#1a2b4b" d="m 241,413 v 1 l 0.7,1.3 1.1,0.6 1,0.2 98,0.02 98,0.02 1.4,-0.3 0.8,-0.6 0.6,-0.8 0.2,-1.3 H 345 Z" />
-                            <path fill="#1a2b4b" d="m 370,282 -49,0.002 -1.3,0.3 -1.5,1.4 -0.5,1.4 0.09,43 1,1.5 0.9,0.6 1.4,0.5 72,0.01 1.5,-0.5 1.2,-0.9 0.8,-1.8 -0.09,-6 h -2.8 l -3.3,-0.08 0.08,2.7 -0.6,0.6 -56,0.09 h -17 l -0.1,0.3 h -10 l 0.1,-0.02 -2.7,-0.6 -0.5,-0.4 V 356 V 345 l 0.08,-0.08 0.09,-20 0.6,-0.6 46,-0.09 2.7,-2.7 z" />
-                            <path fill="#ffc42b" d="m 241,412 c -0.3,-0.09 -0.6,-0.4 -0.6,-0.6 0,-0.5 2.9,-3.4 5.5,-5.5 l 1.4,-1.1 h 86 l 1,0.9 c 1.3,1 2,1.1 3.3,0.1 1.1,-0.9 1.3,-2.7 0.2,-3.7 -1,-0.9 -2.9,-0.7 -3.8,0.3 l -0.7,0.9 -42.5,0.09 c -23,0.05 -42.5,-0.008 -42.5,-0.1 2.7,-2.7 3.5,-2.5 44,0.006 l 43,0.01 3.3,3.3 37,0.09 c 20,0.05 37,0.2 37,0.3 1,0 2.4,-1.6 2.4,-2.8 0,-2.2 -2.9,-3.2 -4.5,-1.3 l -0.8,0.9 h -36 c -22,0 -36,-0.1 -37,-0.3 -2.3,-1.4 -4.3,-3.4 l -3.1,-3 h -43 c 6.3,-5.6 14,-0.4 81,-0.4 h 80 l 1.2,0.5 c 4.3,3.4 10.5,9.3 8.5,8.4 -207,0.4 -208,0.2 z" />
-                            
-                            <!-- Engrenagem Giratória -->
-                            <path id="engrenagem" fill="#ffc42b" d="m 450,330 c -2,-3 -5,-5 -10,-4 -5,1 -8,4 -10,8 -2,4 -1,9 2,12 3,3 8,4 12,2 4,-2 6,-6 6,-10 0,-4 -2,-7 -5,-9 z m -15,-25 3,-5 8,2 2,5 -3,5 -8,-2 z" transform="scale(1.5) translate(-120, -100)" />
-                            
-                            <!-- Circuitos pulsantes -->
-                            <g stroke="#ffc42b" stroke-width="2" fill="none" opacity="0.6">
-                                <path class="linha-circuito" d="m 280,320 20,20 h 40 l 15,-15" />
-                                <path class="linha-circuito" d="m 300,300 15,15 h 30" />
-                            </g>
+                    <g transform="translate(-100, -50) scale(1.2)">
+                        <!-- Laptop: Tela e Borda -->
+                        <path fill="#1e293b" d="m 370,282 -49,0 -49,0 -1.3,0.3 -1.3,0.3 -1.5,1.4 -1.5,1.4 -0.5,1.4 -0.5,1.4 0.1,43 0.1,43 1,1.5 1,1.5 0.9,0.6 0.9,0.6 1.4,0.5 1.4,0.5 72,0 72,0 1.5,-0.5 1.5,-0.5 1.2,-0.9 1.2,-0.9 0.8,-1.8 0.8,-1.8 -0.1,-6 -0.1,-6 h -2.8 l -3.3,-0.1 0.1,2.8 0.1,2.7 -0.6,0.6 -0.6,0.6 -56,0.1 -56,0.1 h -17 v -0.1 l -2.7,-0.6 -0.5,-0.4 v -11 v -11 l 0.1,-0.1 v -14 h -0.1 l 0.1,-20 0.1,-20 0.6,-0.6 0.6,-0.6 46,-0.1 46,-0.1 2.7,-2.7 2.7,-2.7 z" />
+                        
+                        <!-- Laptop: Base (Teclado) -->
+                        <path fill="#ffc42b" d="m 241,412 c -0.3,-0.1 -0.6,-0.4 -0.6,-0.6 0,-0.5 2.9,-3.4 5.5,-5.5 l 1.4,-1.1 h 86 l 1,0.9 c 1.3,1 2,1.1 3.3,0.1 1.1,-0.9 1.3,-2.7 0.2,-3.7 -1,-0.9 -2.9,-0.7 -3.8,0.3 l -0.7,0.9 -42.5,0.1 c -23,0.1 -42.5,0 -42.5,-0.1 2.7,-2.7 3.5,-2.5 44,0.1 l 43,0 3.3,3.3 37,0.1 c 20,0.1 37,0.2 37,0.4 1,0 2.4,-1.6 2.4,-2.8 0,-2.2 -2.9,-3.2 -4.5,-1.3 l -0.8,0.9 h -36 c -22,0 -36,-0.1 -37,-0.3 -2.3,-1.4 -4.3,-3.4 l -3.1,-3 h -43 c 6.3,-5.6 14,-0.4 81,-0.4 h 80 l 1.2,0.5 c 4.3,3.4 10.5,9.3 8.5,8.4 -207,0.4 -208,0.2 z" />
+
+                        <!-- Engrenagem Giratória (Posicionada sobre a tela) -->
+                        <path id="engrenagem-nativa" fill="#ffc42b" d="m 825.13,386.54 c -0.33,0.04 -0.71,0.52 -1.49,1.46 -1.69,2.07 -6.15,6.45 -7.42,7.29 -3.11,2.04 -6.38,1.97 -12.97,-0.27 -4.32,-1.47 -4.25,-1.47 -4.45,-0.25 -1.68,10.51 -3.71,13.69 -10.01,15.73 -1.53,0.49 -6.87,1.6 -8.67,1.79 -0.19,0.02 0.05,1.07 0.63,2.74 2.06,5.93 2.56,10.7 1.38,13.22 -1.24,2.64 -4.35,6.16 -7.68,8.67 -0.69,0.52 -1.27,1.08 -1.27,1.25 -0.01,0.16 0.88,1 1.98,1.87 7.99,6.35 9.11,10.06 5.93,19.63 -0.82,2.48 -1.19,3.86 -1.07,3.98 0.1,0.1 1.08,0.31 2.18,0.46 7.43,1.03 11.34,2.79 13.27,5.99 1.22,2.02 2.92,7.75 3.28,11.09 0.15,1.46 0.25,1.5 2.02,0.8 5.73,-2.26 11.56,-2.9 14.36,-1.58 2.19,1.03 6.79,5.21 8.99,8.17 1.02,1.37 0.93,1.39 2.23,-0.38 2.41,-3.3 6.86,-7.14 9.37,-8.08 2.61,-0.97 8.37,-0.18 13.78,1.9 1.78,0.68 1.78,0.68 2.02,-1.19 0.47,-3.76 2.02,-9.14 3.09,-10.75 1.93,-2.91 7.39,-5.24 14.51,-6.18 1.31,-0.17 1.33,-0.24 0.5,-2.59 -2.63,-7.54 -2.85,-11.31 -0.84,-14.58 1.4,-2.3 4.1,-5.14 6.9,-7.27 1.58,-1.21 1.59,-1.27 0.31,-2.27 -3.51,-2.75 -6.34,-5.92 -7.67,-8.59 -0.8,-1.61 -0.01,-2.6 1.84,-8.89 0.52,-1.45 0.9,-2.76 0.85,-2.89 -0.05,-0.13 -1.09,-0.42 -2.44,-0.67 -12.11,-2.25 -14.59,-4.91 -16.38,-17.51 z" transform="matrix(0.18,0,0,0.18,240,240)"/>
+
+                        <!-- Linhas de Circuito (Coordenadas Fixas) -->
+                        <g stroke="#ffc42b" stroke-width="2.5" fill="none" class="glow-orange">
+                            <path class="circuito-tech" d="m 280,330 20,20 h 60 l 20,-20" />
+                            <path class="circuito-tech" d="m 310,310 15,15 h 50" style="animation-delay: 1s;" />
+                            <path class="circuito-tech" d="m 260,400 h 180" style="animation-delay: 2s;" />
                         </g>
-                    </svg>
-                </div>
+                    </g>
+                </svg>
             </div>
         </div>
     </section>
+
+    <footer class="py-10 text-center text-gray-600 text-sm border-t border-gray-900">
+        Nitya Tech &copy; 2024 - Soluções em Alta Performance
+    </footer>
 
 </body>
 </html>
